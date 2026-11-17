@@ -1,0 +1,27 @@
+column,type,source,description
+transaction_id,string,Synthetic,Unique UUID for the transaction
+step,int,Original,Simulated time step (1 step = 1 hour)
+type,string,Original,"Transaction type (PAYMENT, TRANSFER, etc.)"
+amount,float,Original,Transaction amount in local currency
+nameOrig,string,Original,Origin customer ID
+oldbalanceOrg,float,Original,Origin balance before transaction
+newbalanceOrig,float,Original,Origin balance after transaction
+nameDest,string,Original,Destination customer/merchant ID
+oldbalanceDest,float,Original,Destination balance before transaction
+newbalanceDest,float,Original,Destination balance after transaction
+isFraud,int,Original,"Actual fraud indicator (1=Fraud, 0=Genuine)"
+isFlaggedFraud,int,Original,Original simplistic heuristic flag
+timestamp,datetime,Synthetic,Real timestamp mapped from step (Starts 2026-01-01)
+hour_of_day,int,Synthetic,Extracted hour (0-23) for heatmaps
+day_of_week,string,Synthetic,Extracted day name (Monday-Sunday)
+day_number,int,Synthetic,Extracted day of week number (1-7)
+is_weekend,int,Synthetic,"1 if weekend, 0 if weekday"
+device_id,string,Synthetic,Assigned device ID to enable velocity tracking
+city,string,Synthetic,Assigned Indian city
+latitude,float,Synthetic,City latitude
+longitude,float,Synthetic,City longitude
+customer_avg_amount,float,Synthetic,Overall average txn amount for this customer
+customer_std_amount,float,Synthetic,Overall std dev of txn amount for this customer
+customer_txn_count,int,Synthetic,Total lifetime transactions for this customer
+deviation_score,float,Synthetic,Z-score of current amount vs customer baseline
+risk_score,int,Synthetic,Composite simulated machine learning risk score (0-100)
