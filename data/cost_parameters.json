@@ -1,0 +1,6 @@
+{
+    "cost_per_false_positive_usd": 15,
+    "cost_per_missed_fraud_usd": 500,
+    "investigation_cost_per_alert_usd": 25,
+    "justification": "False positives annoy customers, assumed $15 lifetime value risk. Missed fraud averages $500 hard loss. Investigation costs assume 30 mins analyst time at $50/hr."
+}
